@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class App extends Component {
   render() {
-    return <div>have a fun</div>;
+    return (
+      <div className="main-container">
+        <h1>skdj</h1>
+      </div>
+    );
   }
 }
 
