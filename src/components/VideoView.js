@@ -6,7 +6,7 @@ const FullVideoView = ({ data }) =>
   isEmpty(data) ? (
     <img src={placeholder} alt="placeholder" />
   ) : (
-    <video src={data.src} />
+    <video src={data.src} autoPlay />
   );
 
 export default FullVideoView;
