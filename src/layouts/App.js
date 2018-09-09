@@ -1,10 +1,35 @@
 import React, { Component } from "react";
+import FullVideoView from "../components/VideoView";
+import ButtonList from "../components/ButtonList";
+import { data } from "../data";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      videos: data,
+      currentVideo: {}
+    };
+  }
+
+  pickCurrentVideo = currentVideo => {
+    this.setState({
+      currentVideo
+    });
+  };
+
   render() {
+    const { videos } = this.state;
     return (
       <div className="main-container">
-        <h1>skdj</h1>
+        <FullVideoView data={this.state.currentVideo} />
+        {videos.map(video => (
+          <ButtonList
+            key={video.id}
+            data={video}
+            onClick={() => this.pickCurrentVideo(video)}
+          />
+        ))}
       </div>
     );
   }
