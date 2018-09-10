@@ -23,13 +23,15 @@ class App extends Component {
     return (
       <div className="main-container">
         <FullVideoView data={this.state.currentVideo} />
-        {videos.map(video => (
-          <ButtonList
-            key={video.id}
-            data={video}
-            onClick={() => this.pickCurrentVideo(video)}
-          />
-        ))}
+        <div className="button-section">
+          {videos.map(video => (
+            <ButtonList
+              key={video.id}
+              data={video}
+              onClick={() => this.pickCurrentVideo(video)}
+            />
+          ))}
+        </div>
       </div>
     );
   }
